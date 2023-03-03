@@ -1,0 +1,138 @@
+.pin-container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card_width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+}
+
+.pin-container .pin {
+    position: relative;
+    display: flex;
+    margin: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 10px;
+    animation: animateElement linear 0.5s;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.pin-container .pin .modal {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s;
+}
+
+.pin-container .pin .modal:hover {
+    opacity: 1;
+}
+
+
+.pin-container .pin .modal .header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    top: 0;
+    position: fixed;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pin-container .pin .modal .footer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pin-container .pin .modal .modal-button {
+    opacity: 0.8;
+    border-color: transparent;
+    background: transparent;
+    margin: 10px;
+    transition: opacity 0.3s;
+}
+
+.pin-container .pin .modal .modal-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.pin-container .pin .modal .modal-button-save {
+    opacity: 0.8;
+    background: rgb(255, 255, 255);
+    border-color: transparent;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #191919;
+    padding: 7px;
+    margin: 10px;
+    transition: opacity 0.3s;
+}
+
+.pin-container .pin .modal .modal-button-save:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.pin-container .pin.small {
+    grid-row-start: span var(--card_small);
+}
+
+.pin-container .pin.medium {
+    grid-row-start: span var(--card_medium);
+}
+
+.pin-container .pin.large {
+    grid-row-start: span var(--card_large);
+}
+
+.pin-container .pin:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.pin-container .pin .pin-label {
+    font-size: 14px;
+    width: fit-content;
+    margin: 5px;
+    font-weight: 400;
+    padding: 3px;
+}
+
+.pin-container .pin img {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 10px;
+    border-color: transparent;
+    transition: border-radius 0.2s;
+}
+
+.pin-container .pin img:hover {
+    border-radius: 15px;
+}
+
+@keyframes animateElement {
+    0% {
+      transform:  scale(0);
+    }
+    100% {
+      transform:  scale(1);
+    }
+}

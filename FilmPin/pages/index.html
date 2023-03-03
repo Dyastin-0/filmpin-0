@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/pin.css">
+    <link rel="stylesheet" href="./styles/login_style.css">
+    <link rel="stylesheet" href="./styles/add_pin_modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Film Pin</title>
+    <link rel="icon" type="image/x-icon" class="fa fa-film">
+</head>
+<body>
+
+    <div class="main">
+
+        <nav class="nav">
+            <button class="nav-button black">Home</button>
+            <div class="wrapper button">
+                <button class="nav-button" id="add-pin">
+                    <label for="add-pin" class="label" id="add-label">Create</label>
+                    <i class="search-icon fa fa-plus-square"></i>
+                 </button>
+            </div>
+            <div class="wrapper">
+                <i class="search-icon fa fa-search "></i>
+                <input type="text" class="search-input" placeholder="Search" id="search-input">
+            </div>
+            <button class="nav-button"><i class="fa fa-bell"></i></button>
+            <button class="nav-button"><i class="fa fa-commenting"></i></button>
+            <button class="nav-button"><i class="fa fa-chevron-down"></i></button>
+        </nav>
+
+        <div class="content-div">
+            <label class="content-label"> Recently Added </label>
+           
+            <div class="pin-container" id="recent"></div>
+        </div>
+
+        <div class="content-div hide">
+            <label class="content-label"> All </label>
+
+            <div class="pin-container" id="all"></div>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+
+        <button class="nav-button floating-button" id="floating-add"> <i class="fa fa-plus"></i> </button>
+
+    </div>
+
+    <template id="modal">
+        <div class="modal" id="modal-template">
+            <div class="header">
+                <button class="modal-button-save" id="ellipsis-button">
+                    <i class="fa fa-ellipsis-v fa-lg"></i>
+                </button>
+            </div>
+            <div class="footer">
+                <button class="modal-button-save" id="save-button">
+                    Save
+                </button>
+                <button class="modal-button-save" id="download-button">
+                    <i class="fa fa-upload fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <div class="add-pin-modal" id="add-modal">
+
+        <div class="header">
+            <label class="modal-title">Add a pin</label>
+            <button class="close-button" id="close-add-modal"><i class="fa fa-close fa-lg"></i></button>
+        </div>
+        
+        <input class="input-title" type="text" placeholder="Enter title here" id="title-input">
+
+        <div class="pin-container" id="pin-preview"></div>
+
+        <div class="footer">
+            <label>Choose a size</label>
+            <select name="" id="size-input" class="select-size">
+                <option value="small"> Small </option>
+                <option value="medium"> Medium </option>
+                <option value="large"> Large </option>
+            </select>
+            <input class="input-file" id="file-input" type="file">
+            <label class="file-label" for="file-input"> 
+                <i class="fa fa-file-image-o"></i>
+                Select a photo </label>
+            <button id="add-film-pin"> Add </button>
+        </div>
+
+    </div>
+
+    <script src="./scripts/loadFeatured.js"></script>
+    <script src="./scripts/closeAddPinModal.js"></script>
+    <script src="./scripts/displayAddPinModal.js"></script>
+    <script src="./scripts/previewPin.js"></script>
+    <script src="./scripts/addPin.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./components/pin.js"></script>
+    <script src="./scripts/scroll_content.js"></script>
+
+</body>
+</html>
