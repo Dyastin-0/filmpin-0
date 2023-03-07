@@ -10,9 +10,9 @@ function addPin(pin) {
 addPinButton.onclick = function() {
     const pin = document.getElementById("new-pin" + i);
     pin.title = titleInput.value;
-    let pinInfo = [pin, pin.id]
+    let pinInfo = [pin, pin.id];
     addPin(pinInfo);
-    all.append(pins.get(pinTitle)[0])
+    all.append(pins.get(pinTitle)[0]);
     i = i + 1;
     closeAddModal();
     clearForm();
